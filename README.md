@@ -11,7 +11,7 @@ npm install bots-ips
 ## Usage
 
 Get a list of recent bots IPs:
-```
+```javascript
 const {BotApiClient} = require('bots-ips');
 
 (async () => {
@@ -46,7 +46,8 @@ const {BotApiClient} = require('bots-ips');
 */
 ```
 
-```
+Verify if an IP address has been used by a bot:
+```javascript
 const {BotApiClient} = require('bots-ips');
 
 (async () => {
