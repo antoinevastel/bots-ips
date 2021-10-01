@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/antoinevastel/bots-ips.git"
   },
-  "keywords": [],
+  "keywords": ["bots", "IP", "IP address", "IP reputation"],
   "author": "Antoine Vastel",
   "license": "MIT",
   "bugs": {
