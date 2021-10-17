@@ -10,6 +10,8 @@ npm install bots-ips
 
 ## Usage
 
+### Recent bot IPs
+
 Get a list of recent bots IPs:
 ```javascript
 const {BotApiClient} = require('bots-ips');
@@ -46,6 +48,8 @@ const {BotApiClient} = require('bots-ips');
 */
 ```
 
+### Verify one IP addresses
+
 Verify if an IP address has been used by a bot:
 ```javascript
 const {BotApiClient} = require('bots-ips');
@@ -76,3 +80,54 @@ const {BotApiClient} = require('bots-ips');
 */
 ```
 
+### Verify a batch of IP addresses
+
+Verify if several IP addresses have been used by bots:
+```javascript
+const {BotApiClient} = require('bots-ips');
+
+(async () => {
+    const client = new BotApiClient();
+
+    const infoIps = await client.verifyIps(["185.82.126.222", "202.74.73.51", "202.74.73.53"]);
+    console.log(infoIps);
+})();
+
+/*
+    [
+    {
+        matched: false,
+        ip: '202.74.73.51',
+        events: [],
+        autonomousSystemOrganization: 'PT Global Port Binekatara',
+        autonomousSystemNumber: 24522,
+        country: 'ID'
+    },
+    {
+        matched: false,
+        ip: '202.74.73.53',
+        events: [],
+        autonomousSystemOrganization: 'PT Global Port Binekatara',
+        autonomousSystemNumber: 24522,
+        country: 'ID'
+    },
+    {
+        matched: true,
+        ip: '185.82.126.222',
+        autonomousSystemOrganization: 'Sia Nano IT',
+        autonomousSystemNumber: 52173,
+        country: 'LV',
+        events: [
+        2021-10-03T00:00:26.138Z,
+        2021-10-03T12:00:13.452Z,
+        2021-10-04T00:00:19.792Z,
+        2021-10-04T12:00:11.733Z,
+        ...
+        2021-10-16T00:00:13.588Z,
+        2021-10-16T12:00:11.173Z,
+        2021-10-17T00:00:17.365Z
+        ]
+    }
+    ]
+*/
+```

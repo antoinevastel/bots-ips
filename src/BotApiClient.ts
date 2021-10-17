@@ -87,4 +87,35 @@ export class BotApiClient {
             throw Error(e.message)
         }
     }
+
+    async verifyIps(ipAddresses: string[]): Promise<RecentBotsIpInfo[] | ApiError> {
+        try {
+            const response = await this.httpClient.post('bots/ips', {
+                json: {
+                    ips: ipAddresses
+                },
+                responseType: 'json'
+            });
+  
+
+            if (response.statusCode === 200) {
+                response.body.forEach((ipInfo: IpInfo) => {
+                    ipInfo.events = ipInfo.events.map((eventIpTime: string|Date) => {
+                        return new Date(eventIpTime)
+                    });
+                })
+                return response.body;
+            }
+            
+            // If status code other than 200
+            return {
+                error: true,
+                message: response.body,
+                statusCode: response.statusCode
+            }
+
+        } catch (e: any) {
+            throw Error(e.message)
+        }
+    }
 }

@@ -26,5 +26,6 @@ export declare class BotApiClient {
     constructor();
     getRecentBotIps(): Promise<RecentBotsIpInfo[] | ApiError>;
     verifyIp(ipAddress: string): Promise<IpInfo | ApiError>;
+    verifyIps(ipAddresses: string[]): Promise<RecentBotsIpInfo[] | ApiError>;
 }
 export {};

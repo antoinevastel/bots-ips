@@ -1,6 +1,6 @@
 {
   "name": "bots-ips",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Package to access an API that provides information about bot IP addresses.",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
