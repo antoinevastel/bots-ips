@@ -134,7 +134,7 @@ const {BotApiClient} = require('bots-ips');
 
 ## Sponsor
 
-Feel free to support this project by [becoming a Patron.](https://www.patreon.com/malicious_bots_ips_api).
+Feel free to support this project by [becoming a Patron.](https://www.patreon.com/malicious_bots_ips_api)
 
 All donations are used to improve the malicious bot IPs API:
 - Improve infrastructure;
